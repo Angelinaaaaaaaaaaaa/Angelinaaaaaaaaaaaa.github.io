@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { layout, space, compose } from 'styled-system';
+import { compose, layout, space } from 'styled-system';
 
 import Grid, { GridProps } from './Grid';
 

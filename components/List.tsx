@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import {
-  grid,
-  layout,
-  padding,
-  margin,
-  GridProps,
-  LayoutProps,
-  PaddingProps,
-  MarginProps,
   compose,
+  grid,
+  GridProps,
+  layout,
+  LayoutProps,
+  margin,
+  MarginProps,
+  padding,
+  PaddingProps,
 } from 'styled-system';
 
 const List = styled.ul<GridProps & LayoutProps & PaddingProps & MarginProps>`

@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import {
-  fontSize,
-  fontWeight,
   color,
-  textAlign,
-  margin,
-  compose,
-  FontSizeProps,
-  FontWeightProps,
-  TextAlignProps,
-  MarginProps,
   ColorProps,
+  compose,
+  fontSize,
+  FontSizeProps,
+  fontWeight,
+  FontWeightProps,
+  margin,
+  MarginProps,
+  textAlign,
+  TextAlignProps,
 } from 'styled-system';
 
 const Title = styled.h1<

@@ -7,7 +7,6 @@ import React from 'react';
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 import { MdMail } from 'react-icons/md';
 import { Instagram } from '@icons';
-import { gridGap } from 'styled-system';
 
 const StyledFooter = styled.footer`
   width: 100%;

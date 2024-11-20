@@ -1,13 +1,13 @@
 import styled, { css, keyframes } from 'styled-components';
 import {
-  padding,
   color,
-  layout,
-  variant,
-  compose,
-  PaddingProps,
   ColorProps,
+  compose,
+  layout,
   LayoutProps,
+  padding,
+  PaddingProps,
+  variant,
 } from 'styled-system';
 
 interface ButtonProps {

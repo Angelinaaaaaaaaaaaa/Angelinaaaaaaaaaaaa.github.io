@@ -105,9 +105,9 @@ const About = (): JSX.Element => (
         <Text>Developer, 06/2023-09/2023</Text>
         <Text>Project 1: Video Content Creation Project App</Text>
         <Text>
-          ➤ Utilized Python&apos;s requests library to make RESTful API calls to the
-          EDGAR API, fetching financial statements and quarterly reports, and
-          implemented error handling and retries for API requests to ensure
+          ➤ Utilized Python&apos;s requests library to make RESTful API calls to
+          the EDGAR API, fetching financial statements and quarterly reports,
+          and implemented error handling and retries for API requests to ensure
           reliable data retrieval.
         </Text>
         <Text>
@@ -135,15 +135,15 @@ const About = (): JSX.Element => (
         </Text>
         <Text>Project 2: Auto-fin Application</Text>
         <Text>
-          ➤ Developed an application in Python to automate parts of the fund&apos;s
-          investment process, reducing manual workload.
+          ➤ Developed an application in Python to automate parts of the
+          fund&apos;s investment process, reducing manual workload.
         </Text>
         <Text>
-          ➤ Created an RSS Feed parser and utilized Python&apos;s feedparser library
-          to parse RSS feeds, and implemented regular expressions to extract
-          specific information (e.g., CEO/CFO names, contact information) from
-          the press releases. Stored the extracted data in a relational database
-          (e.g., PostgreSQL) for easy querying and analysis.
+          ➤ Created an RSS Feed parser and utilized Python&apos;s feedparser
+          library to parse RSS feeds, and implemented regular expressions to
+          extract specific information (e.g., CEO/CFO names, contact
+          information) from the press releases. Stored the extracted data in a
+          relational database (e.g., PostgreSQL) for easy querying and analysis.
         </Text>
         <Text>
           ➤ Implemented streaming APIs using Flask to detect and download 10-K/Q

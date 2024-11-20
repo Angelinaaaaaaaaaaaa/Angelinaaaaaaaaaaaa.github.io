@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { GetStaticProps } from 'next';
 
-import { Title, Container, Text, Button, Grid, Link, List } from '@components';
+import { Button, Container, Grid, Link, List, Text, Title } from '@components';
 import { getPosts, Post } from '@posts';
 
 interface ProjectProps {

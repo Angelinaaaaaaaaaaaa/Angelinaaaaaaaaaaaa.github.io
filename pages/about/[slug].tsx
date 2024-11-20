@@ -5,7 +5,7 @@ import {
   NextPage,
 } from 'next';
 import Head from 'next/head';
-import { Container, Title, Text, MDXContent, Separator } from '@components';
+import { Container, MDXContent, Separator, Text, Title } from '@components';
 import { getPosts, Post } from '@posts';
 import Image from 'next/image';
 

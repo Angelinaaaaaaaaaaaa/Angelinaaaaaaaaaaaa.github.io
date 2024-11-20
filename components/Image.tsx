@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import {
   compose,
   flexbox,
-  layout,
   FlexboxProps,
+  layout,
   LayoutProps,
 } from 'styled-system';
 

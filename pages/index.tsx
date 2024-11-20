@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-import { Container, Title, Button, Grid, Link, Text } from '@components';
+import { Button, Container, Grid, Link, Text, Title } from '@components';
 import styles from '@styles/Home.module.css';
 
 const Home = (): JSX.Element => (
@@ -39,10 +39,10 @@ const Home = (): JSX.Element => (
       <Container maxWidth="700px" gridGap="3rem">
         <Container>
           <Text textAlign="center">
-            I&apos;m a passionate student interested in data science and machine learning,
-            with a focus on algorithmic fairness and decision support tools.
-            I am eager to expand my knowledge and contribute to the ethical
-            use of technology in academia and beyond.
+            I&apos;m a passionate student interested in data science and machine
+            learning, with a focus on algorithmic fairness and decision support
+            tools. I am eager to expand my knowledge and contribute to the
+            ethical use of technology in academia and beyond.
           </Text>
         </Container>
         <Link href="/about">
@@ -65,11 +65,13 @@ const Home = (): JSX.Element => (
           marginTop="2rem"
           // gridTemplateColumns={['1fr', 'repeat(2, 1fr)']}
           gridTemplateColumns="1fr"
-          justifyItems="center"  // Centering horizontally
-          alignItems="center"    // Centering vertically
+          justifyItems="center" // Centering horizontally
+          alignItems="center" // Centering vertically
         >
           <Link href="mailto:ruz039@ucsd.edu">
-            <Button width="auto">  {/* Width set to auto for centering */}
+            <Button width="auto">
+              {' '}
+              {/* Width set to auto for centering */}
               <motion.span
                 initial={{ display: 'inline-block' }}
                 animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
@@ -87,7 +89,6 @@ const Home = (): JSX.Element => (
         </Grid>
       </Container>
     </Container>
-
   </Container>
 );
 

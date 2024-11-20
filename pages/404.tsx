@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Title, Text } from '@components';
+import { Container, Text, Title } from '@components';
 
 const NotFound = (): JSX.Element => (
   <Container alignItems="center">

@@ -1,18 +1,18 @@
 import styled, { css } from 'styled-components';
 import {
-  color,
   background,
-  layout,
+  BackgroundProps,
+  color,
   ColorProps,
   compose,
   fontSize,
   FontSizeProps,
-  BackgroundProps,
   fontWeight,
   FontWeightProps,
+  layout,
+  LayoutProps,
   opacity,
   OpacityProps,
-  LayoutProps,
   system,
 } from 'styled-system';
 import { Property } from 'csstype';

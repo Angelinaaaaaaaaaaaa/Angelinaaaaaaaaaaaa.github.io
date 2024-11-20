@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import {
-  textAlign,
-  margin,
-  fontSize,
-  fontWeight,
-  display,
-  typography,
   color,
-  layout,
   compose,
-  TextAlignProps,
-  MarginProps,
-  FontWeightProps,
+  display,
   DisplayProps,
+  fontSize,
   FontSizeProps,
-  TypographyProps,
+  fontWeight,
+  FontWeightProps,
+  layout,
   LayoutProps,
+  margin,
+  MarginProps,
+  textAlign,
+  TextAlignProps,
+  typography,
+  TypographyProps,
 } from 'styled-system';
 
 const Text = styled.p<

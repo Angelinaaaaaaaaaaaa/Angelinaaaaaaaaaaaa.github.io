@@ -4,7 +4,7 @@ import { GetStaticPropsResult, NextPage } from 'next';
 import { NotionAPI } from 'notion-client';
 
 import { getPageInfo, Page, POSTS } from '@posts/notion';
-import { Title, Link, Container, Grid, Card, Image, Text } from '@components';
+import { Card, Container, Grid, Image, Link, Text, Title } from '@components';
 
 interface BlogProps {
   pages: Page[];

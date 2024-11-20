@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import Image from 'next/image';
 import TimeAgo from 'javascript-time-ago';
-import { Title, Container, Text, Grid, Link, Card } from '@components';
+import { Card, Container, Grid, Link, Text, Title } from '@components';
 
 import en from 'javascript-time-ago/locale/en.json';
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
