@@ -105,7 +105,7 @@ const About = (): JSX.Element => (
         <Text>Developer, 06/2023-09/2023</Text>
         <Text>Project 1: Video Content Creation Project App</Text>
         <Text>
-          ➤ Utilized Python's requests library to make RESTful API calls to the
+          ➤ Utilized Python&apos;s requests library to make RESTful API calls to the
           EDGAR API, fetching financial statements and quarterly reports, and
           implemented error handling and retries for API requests to ensure
           reliable data retrieval.
@@ -128,18 +128,18 @@ const About = (): JSX.Element => (
           configuration.
         </Text>
         <Text>
-          ➤ Developed custom tokenization functions using Python's Natural
+          ➤ Developed custom tokenization functions using Python&apos;s Natural
           Language Toolkit and Spacy libraries to preprocess text data and
           implemented logging mechanisms to track the progress of each step,
           including data extraction, preprocessing, and script generation.
         </Text>
         <Text>Project 2: Auto-fin Application</Text>
         <Text>
-          ➤ Developed an application in Python to automate parts of the fund's
+          ➤ Developed an application in Python to automate parts of the fund&apos;s
           investment process, reducing manual workload.
         </Text>
         <Text>
-          ➤ Created an RSS Feed parser and utilized Python's feedparser library
+          ➤ Created an RSS Feed parser and utilized Python&apos;s feedparser library
           to parse RSS feeds, and implemented regular expressions to extract
           specific information (e.g., CEO/CFO names, contact information) from
           the press releases. Stored the extracted data in a relational database
@@ -157,7 +157,7 @@ const About = (): JSX.Element => (
           ➤ Configured AWS Lambda functions for background tasks and data
           processing and Utilized AWS RDS for the database backend to ensure
           high availability and performance, simplifying the data collection
-          process and enhancing the system's scalability.
+          process and enhancing the system&apos;s scalability.
         </Text>
       </Container>
     </Container>

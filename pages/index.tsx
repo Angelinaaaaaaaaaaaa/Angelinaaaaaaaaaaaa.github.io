@@ -39,7 +39,7 @@ const Home = (): JSX.Element => (
       <Container maxWidth="700px" gridGap="3rem">
         <Container>
           <Text textAlign="center">
-            I'm a passionate student interested in data science and machine learning,
+            I&apos;m a passionate student interested in data science and machine learning,
             with a focus on algorithmic fairness and decision support tools.
             I am eager to expand my knowledge and contribute to the ethical
             use of technology in academia and beyond.

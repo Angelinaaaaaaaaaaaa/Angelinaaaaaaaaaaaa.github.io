@@ -1,11 +1,8 @@
-# [shellbear.me](https://shellbear.me/)
+# [Runjie Zhang](https://Angelinaaaaaaaaaaaa.github.io)
 
 Source code of my personal website & blog ✨
 
-Check the live version [here](https://shellbear.me/) ⚡️
-
-[![home](.github/img/home.png)](https://shellbear.me/)
-[![blog](.github/img/blog.png)](https://shellbear.me/)
+Check the live version [here](https://Angelinaaaaaaaaaaaa.github.io/) ⚡️
 
 ## ✨ Features
 

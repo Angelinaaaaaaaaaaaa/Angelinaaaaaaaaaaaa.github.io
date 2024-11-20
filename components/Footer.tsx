@@ -6,7 +6,8 @@ import Text from './Text';
 import React from 'react';
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
 import { MdMail } from 'react-icons/md';
-import { Malt, Instagram } from '@icons';
+import { Instagram } from '@icons';
+import { gridGap } from 'styled-system';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -55,7 +56,7 @@ const links = [
 const Footer = (): JSX.Element => (
   <StyledFooter>
     <Container paddingY="25px">
-      <Grid gridGap="30px">
+      <Grid gridGap={['1rem', '2rem', '3rem']}>
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/projects">Projects</Link>
