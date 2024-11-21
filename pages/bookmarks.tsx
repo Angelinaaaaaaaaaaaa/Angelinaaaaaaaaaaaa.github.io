@@ -1,20 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
-import Image from 'next/image';
-import TimeAgo from 'javascript-time-ago';
-import { Card, Container, Grid, Link, Text, Title } from '@components';
+import { GetStaticProps } from 'next';
+import { Container, Grid, Text, Title } from '@components';
 
-import en from 'javascript-time-ago/locale/en.json';
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
 import { getBookmarks } from '../notion';
 
-TimeAgo.addDefaultLocale(en);
-const timeAgo = new TimeAgo('en-US');
-
-const Bookmarks = ({
-  bookmarks,
-}: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => (
+const Bookmarks = (): JSX.Element => (
   <Container marginBottom="5rem">
     <Head>
       <title>Bookmarks</title>
@@ -31,51 +23,6 @@ const Bookmarks = ({
       gridTemplateColumns={['repeat(2, minmax(0, 1fr))', 'repeat(3, 1fr)']}
       gridGap={['1rem', '2rem']}
     >
-      {bookmarks.map(({ id, name, created, url }) => (
-        <Link target="_blank" rel="noreferrer noopener" key={id} href={url}>
-          <Card padding={0} margin={0} borderRadius="5px" display="block">
-            <Grid
-              gridTemplateColumns="1fr"
-              justifyItems={['center', 'flex-start']}
-              gridGap={['.2rem', '1rem']}
-            >
-              <Container width="100%" height="150px" position="relative">
-                <Image
-                  layout="fill"
-                  objectFit="cover"
-                  src={`https://rdl.ink/render/${encodeURIComponent(
-                    url,
-                  )}?width=400&height=150&mode=crop&format=avif`}
-                  alt={name}
-                />
-              </Container>
-              <Container
-                width="100%"
-                py=".5rem"
-                px={['.3rem', '1rem']}
-                gridGap={['.2rem', '.5rem']}
-                alignItems="flex-start"
-              >
-                <Title
-                  as="h2"
-                  fontSize={['0.8rem', '1.2rem']}
-                  textAlign="left"
-                  margin={0}
-                >
-                  {name}
-                </Title>
-                <Text
-                  margin={0}
-                  fontWeight="initial"
-                  fontSize={['.6rem', '.9rem']}
-                >
-                  {timeAgo.format(new Date(created))}
-                </Text>
-              </Container>
-            </Grid>
-          </Card>
-        </Link>
-      ))}
     </Grid>
   </Container>
 );
@@ -88,8 +35,8 @@ export interface Bookmark {
 }
 
 const formatBookmarks = ({
-  results,
-}: QueryDatabaseResponse): ReadonlyArray<Bookmark> =>
+                           results,
+                         }: QueryDatabaseResponse): ReadonlyArray<Bookmark> =>
   results.reduce<Array<Bookmark>>((acc, result) => {
     if (
       result.object === 'page' &&
@@ -114,20 +61,14 @@ const formatBookmarks = ({
     return acc;
   }, []);
 
-export const getServerSideProps = async ({
-  res,
-}: GetServerSidePropsContext) => {
+export const getStaticProps: GetStaticProps = async () => {
   const bookmarks = await getBookmarks();
-
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=3600, stale-while-revalidate=60',
-  );
 
   return {
     props: {
       bookmarks: formatBookmarks(bookmarks),
     },
+    revalidate: 60, // Optional: Revalidate the page every 60 seconds
   };
 };
 
