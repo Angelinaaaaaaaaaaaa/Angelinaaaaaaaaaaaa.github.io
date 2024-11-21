@@ -1,7 +1,7 @@
 {
   "name": "RunjieZhang.me",
   "version": "0.1.0",
-  "private": true,
+//  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +9,8 @@
     "lint": "next lint",
     "start": "next start",
     "format": "prettier --write .",
-    "prepack": "husky install"
+    "prepack": "husky install",
+    "publish": "yarn publish --access public"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.6",
