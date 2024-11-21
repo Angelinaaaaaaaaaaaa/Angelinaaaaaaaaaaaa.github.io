@@ -19,7 +19,7 @@ const Home = (): JSX.Element => (
         gridTemplateColumns={['1fr', '1fr 1fr']} // 2 columns on larger screens
         justifyItems="center"
         alignItems="center"
-        style={{ height: '40vh' }} // Ensures full height for centering
+        style={{ height: '60vh' }} // Ensures full height for centering
       >
         {/* First column: Image */}
         <Container
