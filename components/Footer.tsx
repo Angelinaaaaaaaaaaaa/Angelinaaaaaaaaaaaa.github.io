@@ -4,9 +4,8 @@ import Grid from './Grid';
 import Link from './Link';
 import Text from './Text';
 import React from 'react';
-import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
+import { SiFacebook, SiGithub, SiInstagram, SiLinkedin, SiTwitter } from 'react-icons/si';
 import { MdMail } from 'react-icons/md';
-import { Instagram } from '@icons';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -35,7 +34,7 @@ const links = [
     icon: SiGithub,
   },
   {
-    url: 'https://twitter.com/_shellbear',
+    url: 'https://x.com/AngelinaZ_2023',
     icon: SiTwitter,
   },
   {
@@ -47,9 +46,13 @@ const links = [
     icon: SiLinkedin,
   },
   {
-    url: 'https://instagram.com/croissant2france',
-    icon: Instagram,
+    url: 'https://www.instagram.com/runjiezhang.2022/',
+    icon: SiInstagram,
   },
+  {
+    url: 'https://www.facebook.com/RunjieZhang.2022/',
+    icon: SiFacebook,
+  }
 ];
 
 const Footer = (): JSX.Element => (

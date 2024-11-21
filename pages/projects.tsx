@@ -48,14 +48,14 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       <Text textAlign="center">
         I&apos;m always working on new projects. <br />
         You can find them on my&nbsp;
-        <a href="https://github.com/Angelinaaaaaaaaaaaa">Github</a>.
+        <a href="https://github.com/Angelinaaaaaaaaaaaa/">Github</a>.
       </Text>
     </Container>
     <Grid
-      py="4rem"
+      py="2rem"
       gridTemplateColumns={['1fr', 'repeat(2, 1fr)']}
       width="100%"
-      gridGap="10%"
+      gridGap="2rem"
     >
       {projects.map(({ data }) => (
         <ProjectContainer
@@ -84,14 +84,11 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
             </Link>
           </Container>
           <Container gridGap="1rem">
-            <Text
-              textAlign="start"
-              margin={0}
-              lineHeight="180%"
-              letterSpacing="0.02rem"
-            >
-              {data.caption}
-            </Text>
+            <List marginY="1rem" margin={0}>
+              {data.captions.map((caption: string) => (
+                <ProjectTag key={caption}>{caption}</ProjectTag>
+              ))}
+            </List>
             <List marginY="1rem">
               {data.tags.map((tag: string) => (
                 <ProjectTag key={tag}>{tag}</ProjectTag>
