@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@plaiceholder/next": "^2.5.0",
+    "@types/node": "^22.9.1",
     "@vercel/analytics": "^1.0.1",
     "fast-glob": "^3.3.0",
     "framer-motion": "^10.12.18",
