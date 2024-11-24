@@ -82,13 +82,6 @@ const About = (): JSX.Element => (
         <Text>UC San Diego, California, United States</Text>
         <Text>Major: Data Science, Math joint CS</Text>
         <Text>Minor: Cognitive Science</Text>
-        <Text>GPA: 3.8/4</Text>
-        <Text>
-          Coursework: Probabilistic Modeling and Machine Learning, Systems for
-          Scalable Analytics, Principles of Data Science, Practice of Data
-          Science, Vector Calculus, Mathematical Reasoning, Abstract Algebra
-        </Text>
-        <Text>Honors & Awards: Provost Honors</Text>
       </Container>
     </Container>
 
