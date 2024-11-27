@@ -149,7 +149,7 @@ const About = (): JSX.Element => (
             UCSD Math Department (4 quarters)
           </a>
         </Text>
-        <Text>UCSD Tutor, California, United States</Text>
+        <Text>Tutor, California, United States</Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
@@ -157,7 +157,7 @@ const About = (): JSX.Element => (
             UCSD GAP (Global Ambassadors Program)
           </a>
         </Text>
-        <Text>Participant, California, United </Text>
+        <Text>Participant, United </Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
