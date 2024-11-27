@@ -50,15 +50,15 @@ const Home = (): JSX.Element => (
       {/* About Me Section */}
       <Container maxWidth="700px" gridGap="3rem" alignItems="center">
         <Text textAlign="left">
-          I am Angelina (Runjie) Zhang, and I also go by Angie, Angela, or
-          Angel😊. I am currently a third-year student at UC San Diego, double
-          majoring in Data Science and Math-Computer Science with a minor in
-          Cognitive Science. My research interests lie in trustworthy machine
-          learning, with a focus on systematically integrating fairness into
-          algorithm design and improving the interpretability of complex models.
-          My goal is to develop responsible methodologies that address key
-          challenges in data science, promoting equitable and transparent
-          data-driven decision-making.
+          I am Angelina (Runjie) Zhang, and I also go by Angie/Angela/Angel 😉 I
+          am currently a third-year student at UC San Diego, double majoring in
+          Data Science and Math-Computer Science with a minor in Cognitive
+          Science. My research interests lie in trustworthy machine learning,
+          with a focus on systematically integrating fairness into algorithm
+          design and improving the interpretability of complex models. My goal
+          is to develop responsible methodologies that address key challenges in
+          data science, promoting equitable and transparent data-driven
+          decision-making.
         </Text>
         <Link href="/about">
           <Button>More about me &rarr;</Button>
