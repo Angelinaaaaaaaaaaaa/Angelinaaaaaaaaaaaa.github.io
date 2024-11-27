@@ -14,13 +14,13 @@ const Publications = (): JSX.Element => (
     </Container>
     <Grid
       alignItems="flex-start"
-      gridTemplateColumns={['1fr', '1fr 1fr']} // 2 columns, one for the image, one for content
+      gridTemplateColumns={['1fr', '0.5fr 1.5fr']}
       gridGap={['1rem', '2rem']}
     >
       {/* First column: Image */}
       <Container>
         <img
-          src="/img/cav2240-fig-0003-m.webp" // Replace with your actual image path
+          src="/img/cav2240-fig-0003-m.webp"
           alt="Publication Image"
           style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
         />
@@ -28,7 +28,6 @@ const Publications = (): JSX.Element => (
 
       {/* Second column: Content (Title, Authors, Description, Links) */}
       <Container>
-        {/* Title */}
         <Container mb="1rem">
           <Title fontSize="2rem" as="h3">
             De-NeRF: Ultra-high-definition NeRF with deformable net alignment
