@@ -170,7 +170,7 @@ const About = (): JSX.Element => (
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           This revision ensures clarity and professionalism while maintaining a
-          concise format. Let me know if you'd like to add more details to any
+          concise format. Let me know if you&apos;d like to add more details to any
           section!
         </Text>
       </Container>
