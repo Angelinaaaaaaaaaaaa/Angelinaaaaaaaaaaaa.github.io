@@ -73,7 +73,7 @@ const About = (): JSX.Element => (
     <Head>
       <title>About</title>
     </Head>
-    <Container alignContent="center" alignItems="center">
+    <Container alignContent="left" alignItems="left">
       <Title fontSize="40px" as="h2">
         Education
       </Title>
@@ -85,9 +85,9 @@ const About = (): JSX.Element => (
       </Container>
     </Container>
 
-    <Container alignContent="center" alignItems="center">
+    <Container alignContent="left" alignItems="left">
       <Title fontSize="40px" as="h2">
-        Internship Experience
+        Experience
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
@@ -99,7 +99,7 @@ const About = (): JSX.Element => (
       </Container>
     </Container>
 
-    <Container alignContent="center" alignItems="center">
+    <Container alignContent="left" alignItems="left">
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://ventureshares.io/">
@@ -112,7 +112,7 @@ const About = (): JSX.Element => (
 
     <Container alignContent="center" alignItems="center">
       <Title fontSize="40px" as="h2">
-        Extracurricular Activity
+        Extracurricular Activities
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>

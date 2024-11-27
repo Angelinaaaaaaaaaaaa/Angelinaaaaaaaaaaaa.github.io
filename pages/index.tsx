@@ -49,7 +49,7 @@ const Home = (): JSX.Element => (
 
       {/* About Me Section */}
       <Container maxWidth="700px" gridGap="3rem" alignItems="center">
-        <Text textAlign="center">
+        <Text textAlign="left">
           I am Angelina (Runjie) Zhang, and I also go by Angie, Angela, or
           Angel😊. I am currently a third-year student at UC San Diego, double
           majoring in Data Science and Math-Computer Science with a minor in
