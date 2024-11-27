@@ -73,15 +73,16 @@ const About = (): JSX.Element => (
     <Head>
       <title>About</title>
     </Head>
+
     <Container alignContent="left" alignItems="left">
       <Title fontSize="40px" as="h2">
         Education
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
-          UC San Diego, Bachelor of Science, 09/2022-Present, California, United
-          States
+          University of California San Diego (UCSD), California, United States
         </Text>
+        <Text>Bachelor of Science, 09/2022-Present</Text>
         <Text>Major: Data Science, Math-Computer Science</Text>
         <Text>Minor: Cognitive Science</Text>
       </Container>
@@ -121,58 +122,51 @@ const About = (): JSX.Element => (
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
-          <a href="https://profiles.ucsd.edu/natasia.courchesne">Natasia Courchesne-krak</a>
+          <a href="https://profiles.ucsd.edu/natasia.courchesne">
+            Natasia Courchesne-krak
+          </a>
         </Text>
         <Text>Undergraduate Research Assistant, California, United States</Text>
-      </Container>
-      <Container maxWidth={['100%', '720px']} marginY="1rem">
-        <Text><a href="https://bsalimi.github.io">
-          Trustworthy Data Management and Analysis Lab</a>
-        </Text>
-        <Text>Undergraduate Research Assistant, California, United States</Text>
-      </Container>
-      <Container maxWidth={['100%', '720px']} marginY="1rem">
-        <Text><a href="https://ucsdtriplec.github.io">Triple-C Club</a></Text>
-        <Text>Team Membe, California, United States</Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
-          <a href="https://studentorg.ucsd.edu/Home/Details/18637">
-            Halıcıoğlu Data Science Institute
-          </a>
+          <a href="#">Trustworthy Data Management and Analysis Lab</a>
+        </Text>
+        <Text>Undergraduate Research Assistant, California, United States</Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://github.com/ucsdtriplec">Triple-C Club</a>
+        </Text>
+        <Text>Team Member, California, United States</Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="#">UCSD Halıcıoğlu Data Science Institute (HDSI)</a>
         </Text>
         <Text>External Committee Member, California, United States</Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
-          <a href="https://math.ucsd.edu/students/undergraduate/tutoring">
-            UCSD Math Department (4 quarters)
-          </a>
+          <a href="#">UCSD Math Department</a>
         </Text>
-        <Text>Tutor, California, United States</Text>
+        <Text>Tutor (4 quarters), California, United States</Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://iseo.ucsd.edu/programs/">
-            UCSD GAP (Global Ambassadors Program)
+            UCSD Global Ambassadors Program (GAP)
           </a>
         </Text>
-        <Text>Participant, United States</Text>
+        <Text>Both a Mentee and a Mentor, United States</Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://spis.ucsd.edu/people.html">
-            UCSD SPIS (The Summer Program for Incoming Students)
+            UCSD Summer Program for Incoming Students (SPIS)
           </a>
         </Text>
         <Text>Mentor, California, United States</Text>
-      </Container>
-      <Container maxWidth={['100%', '720px']} marginY="1rem">
-        <Text>
-          This revision ensures clarity and professionalism while maintaining a
-          concise format. Let me know if you&apos;d like to add more details to any
-          section!
-        </Text>
       </Container>
     </Container>
 
@@ -185,7 +179,7 @@ const About = (): JSX.Element => (
       width="100%"
     >
       <Title fontSize="40px" as="h2">
-        Technologies I frequently use
+        Technologies I Frequently Use
       </Title>
       <Grid
         gridTemplateColumns={['repeat(3 , 1fr)', 'repeat(6 , 1fr)']}
