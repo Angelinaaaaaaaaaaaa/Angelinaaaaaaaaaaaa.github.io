@@ -157,7 +157,7 @@ const About = (): JSX.Element => (
             UCSD GAP (Global Ambassadors Program)
           </a>
         </Text>
-        <Text>Participant, United </Text>
+        <Text>Participant, United States</Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
