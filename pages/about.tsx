@@ -96,62 +96,6 @@ const About = (): JSX.Element => (
           </a>
         </Text>
         <Text>Developer, 06/2023-09/2023</Text>
-        <Text>Project 1: Video Content Creation Project App</Text>
-        <Text>
-          ➤ Utilized Python&apos;s requests library to make RESTful API calls to
-          the EDGAR API, fetching financial statements and quarterly reports,
-          and implemented error handling and retries for API requests to ensure
-          reliable data retrieval.
-        </Text>
-        <Text>
-          ➤ Designed a script generation pipeline that formats the financial
-          data into a structured format suitable for GPT input to generate video
-          scripts and integrated the output with Notion using the Notion API.
-        </Text>
-        <Text>
-          ➤ Implemented a Cron Job and set up a Linux-based server to automate
-          the execution of the Python script, ensuring timely updates. Created a
-          shell script that orchestrates the entire process, from data retrieval
-          to Notion integration.
-        </Text>
-        <Text>
-          ➤ Wrote functions to tokenize and process filings data, and set up
-          comprehensive logging to monitor data extraction and script execution
-          to ensure robust scheduling and error handling within the Cron Job
-          configuration.
-        </Text>
-        <Text>
-          ➤ Developed custom tokenization functions using Python&apos;s Natural
-          Language Toolkit and Spacy libraries to preprocess text data and
-          implemented logging mechanisms to track the progress of each step,
-          including data extraction, preprocessing, and script generation.
-        </Text>
-        <Text>Project 2: Auto-fin Application</Text>
-        <Text>
-          ➤ Developed an application in Python to automate parts of the
-          fund&apos;s investment process, reducing manual workload.
-        </Text>
-        <Text>
-          ➤ Created an RSS Feed parser and utilized Python&apos;s feedparser
-          library to parse RSS feeds, and implemented regular expressions to
-          extract specific information (e.g., CEO/CFO names, contact
-          information) from the press releases. Stored the extracted data in a
-          relational database (e.g., PostgreSQL) for easy querying and analysis.
-        </Text>
-        <Text>
-          ➤ Implemented streaming APIs using Flask to detect and download 10-K/Q
-          and S3 filings in real-time.
-        </Text>
-        <Text>
-          ➤ Maintained a constantly updated database with ticker symbol
-          information, leveraging GPT for data accuracy.
-        </Text>
-        <Text>
-          ➤ Configured AWS Lambda functions for background tasks and data
-          processing and Utilized AWS RDS for the database backend to ensure
-          high availability and performance, simplifying the data collection
-          process and enhancing the system&apos;s scalability.
-        </Text>
       </Container>
     </Container>
 
@@ -163,25 +107,6 @@ const About = (): JSX.Element => (
           </a>
         </Text>
         <Text>Data Recollection Intern, 06/2024-10/2024</Text>
-        <Text>
-          ➤ Developed Python scripts to extract data from various financial
-          websites, including Linqto, MarketWatch, and EquityZen, leveraging
-          tools such as requests, BeautifulSoup, and APIs to automate data
-          retrieval.
-        </Text>
-        <Text>
-          ➤ Managed IPO data extraction by designing a script to scrape
-          information on recent, upcoming, and future IPOs, organizing the data
-          efficiently for integration into a broader database. Applied data
-          cleaning techniques to ensure accurate representation of financial
-          metrics.
-        </Text>
-        <Text>
-          ➤ Integrated and processed financial listings data, including funding
-          details, company information, and key metrics, storing it in a
-          structured format. Utilized MongoDB for efficient data management,
-          enabling seamless retrieval and analysis across multiple datasets.
-        </Text>
       </Container>
     </Container>
 
