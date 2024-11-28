@@ -51,6 +51,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
         <a href="https://github.com/Angelinaaaaaaaaaaaa/">Github</a>.
       </Text>
     </Container>
+
     <Grid
       py="2rem"
       gridTemplateColumns={['1fr', 'repeat(2, 1fr)']}
@@ -98,6 +99,62 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
         </ProjectContainer>
       ))}
     </Grid>
+
+    <Container alignContent="left" alignItems="left">
+      <Title fontSize="40px" as="h2">
+        Course Projects
+      </Title>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://github.com/Angelinaaaaaaaaaaaa/LOL-Result-Model-2023">
+            DSC80 - LOL-Result-Model-2023
+          </a>
+        </Text>
+        <Text>
+          <a href="https://github.com/Angelinaaaaaaaaaaaa/Side-Analysis-of-League-Of-Legends-2023">
+            DSC80 - Side-Analysis-of-League-Of-Legends-2023
+          </a>
+        </Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://github.com/Angelinaaaaaaaaaaaa/Replication-Active-learning-for-optimal-intervention-design-in-causal-models">
+            DSC180 - Capstone Project - Model - Ongoing
+          </a>
+        </Text>
+        <Text>
+          <a href="https://github.com/Angelinaaaaaaaaaaaa/Replication_reducing_inequality">
+            DSC180 - Targeted Interventions to Reduce Inequality - Ongoing
+          </a>
+        </Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://github.com/Angelinaaaaaaaaaaaa/Skin_Type_Classification">
+            CSE151A - Skin Type Classification
+          </a>
+        </Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://angelinaaaaaaaaaaaa.github.io/Covid-visualization/">
+            DSC106 - COVID Visualization
+          </a>
+        </Text>
+        <Text>
+          <a href="https://angelinaaaaaaaaaaaa.github.io/Yelp-visualization/">
+            DSC106 - Yelp Visualization
+          </a>
+        </Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://github.com/COGS108/Group162-FA24">
+            COGS108 FA24's Final Project - Ongoing
+          </a>
+        </Text>
+      </Container>
+    </Container>
   </Container>
 );
 
