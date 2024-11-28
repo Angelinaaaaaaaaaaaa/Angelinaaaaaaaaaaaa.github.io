@@ -18,8 +18,7 @@ const Bookmarks = (): JSX.Element => (
       alignItems="baseline"
       gridTemplateColumns={['repeat(2, minmax(0, 1fr))', 'repeat(3, 1fr)']}
       gridGap={['1rem', '2rem']}
-    >
-    </Grid>
+    ></Grid>
   </Container>
 );
 

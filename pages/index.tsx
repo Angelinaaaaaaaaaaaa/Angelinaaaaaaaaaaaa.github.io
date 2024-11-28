@@ -38,26 +38,27 @@ const Home = (): JSX.Element => (
         </Container>
 
         {/* Second column: Text Content */}
-        <Container alignItems="center" justifyContent="center" textAlign="center">
+        <Container
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+        >
           <Title>Runjie Zhang</Title>
-          <Title
-            fontSize="2rem"
-            color="rgba(0, 0, 0, 0.6)"
-            fontWeight="500"
-            as="h2"
-          >
-            I innovate, I create, I explore.
-          </Title>
         </Container>
       </Grid>
 
       {/* About Me Section */}
       <Container maxWidth="700px" gridGap="3rem" alignItems="center">
-        <Text textAlign="center">
-          I&apos;m a passionate student interested in data science and machine
-          learning, with a focus on algorithmic fairness and decision support
-          tools. I am eager to expand my knowledge and contribute to the
-          ethical use of technology in academia and beyond.
+        <Text textAlign="left">
+          I am Angelina (Runjie) Zhang, and I also go by Angie/Angela/Angel 😉 I
+          am currently a third-year student at UC San Diego, double majoring in
+          Data Science and Math-Computer Science with a minor in Cognitive
+          Science. My research interests lie in trustworthy machine learning,
+          with a focus on systematically integrating fairness into algorithm
+          design and improving the interpretability of complex models. My goal
+          is to develop responsible methodologies that address key challenges in
+          data science, promoting equitable and transparent data-driven
+          decision-making.
         </Text>
         <Link href="/about">
           <Button>More about me &rarr;</Button>
