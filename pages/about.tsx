@@ -47,10 +47,6 @@ const About = (): JSX.Element => (
           University of California San Diego (UCSD), Bachelor of Science,
           09/2022-Present
         </Text>
-        <Text>
-          University of California San Diego (UCSD), California, United States
-        </Text>
-        <Text>Bachelor of Science, 09/2022-Present</Text>
         <Text>Major: Data Science, Math-Computer Science</Text>
         <Text>Minor: Cognitive Science</Text>
       </Container>
