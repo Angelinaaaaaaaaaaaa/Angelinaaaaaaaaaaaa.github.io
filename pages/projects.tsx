@@ -107,19 +107,19 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/LOL-Result-Model-2023">
-            DSC80 - LOL-Result-Model-2023
+            DSC80 - LOL Result Model 2023
           </a>
         </Text>
         <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/Side-Analysis-of-League-Of-Legends-2023">
-            DSC80 - Side-Analysis-of-League-Of-Legends-2023
+            DSC80 - Side Analysis of League Of Legends 2023
           </a>
         </Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/Replication-Active-learning-for-optimal-intervention-design-in-causal-models">
-            DSC180 - Capstone Project - Model - Ongoing
+            DSC180 - Active Learning - Ongoing
           </a>
         </Text>
         <Text>
@@ -150,7 +150,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://github.com/COGS108/Group162-FA24">
-            COGS108 FA24&apos;s Final Project - Ongoing
+            COGS108 - Predicting Confusion through EEG - Ongoing
           </a>
         </Text>
       </Container>
