@@ -150,7 +150,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://github.com/COGS108/Group162-FA24">
-            COGS108 FA24's Final Project - Ongoing
+            COGS108 FA24&apos;s Final Project - Ongoing
           </a>
         </Text>
       </Container>
