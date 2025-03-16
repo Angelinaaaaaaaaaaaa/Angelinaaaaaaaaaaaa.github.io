@@ -106,6 +106,11 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
+          <a href="https://angelinaaaaaaaaaaaa.github.io/GA_Addressing_Voter_Turnout_Inequalies/">
+            DSC180 - Optimizing Voter Turnout - Ongoing
+          </a>
+        </Text>
+        <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/Replication-Active-learning-for-optimal-intervention-design-in-causal-models">
             DSC180 - Active Learning - Ongoing
           </a>
