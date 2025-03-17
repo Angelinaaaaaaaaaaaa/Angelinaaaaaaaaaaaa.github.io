@@ -6,38 +6,22 @@ import styled from 'styled-components';
 import Menu from '@icons/Menu';
 import Close from '@icons/Close';
 
-const states: { [key: string]: React.CSSProperties } = {
-  '/': {
-    left: '6px',
-    width: '61px',
-  },
-  '/about': {
-    left: '81px',
-    width: '65px',
-  },
-  '/projects': {
-    left: '155px',
-    width: '90px',
-  },
-  '/publications': {
-    left: '245px',
-    width: '120px',
-  },
-};
-
-const NavLink = styled.a`
+const NavLink = styled.a<{ active?: boolean }>`
   color: inherit;
   text-decoration: none;
   cursor: pointer;
   border-bottom: none;
   margin: 0;
-  padding: 0;
-  z-index: 1;
+  padding: 8px 16px;
   font-weight: 500;
-  transition: opacity 0.3s ease 0s;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: ${(props) => (props.active ? 'white' : 'transparent')};
+  border-radius: 25px;
+  box-shadow: ${(props) => (props.active ? '0 2px 4px rgba(0,0,0,0.05)' : 'none')};
 
   &:hover {
-    opacity: 0.5;
+    opacity: ${(props) => (props.active ? 1 : 0.5)};
   }
 `;
 
@@ -51,27 +35,18 @@ export interface NavProps {
   onClose: () => void;
 }
 
-const Links = (): JSX.Element => (
+const Links = ({ activePath }: { activePath: string }): JSX.Element => (
   <>
-    <NavLink href="/">Home</NavLink>
-    <NavLink href="/about">About</NavLink>
-    <NavLink href="/projects">Projects</NavLink>
-    <NavLink href="/publications">Publications</NavLink>
+    <NavLink href="/" active={activePath === '/'}>Home</NavLink>
+    <NavLink href="/about" active={activePath.startsWith('/about')}>About</NavLink>
+    <NavLink href="/projects" active={activePath.startsWith('/projects')}>Projects</NavLink>
+    <NavLink href="/publications" active={activePath.startsWith('/publications')}>Publications</NavLink>
   </>
 );
 
 const Nav = ({ isOpen, onOpen, onClose }: NavProps): JSX.Element => {
   const router = useRouter();
-  let navStyle = states['/'];
-
-  if (router.asPath !== '/') {
-    for (const path of Object.keys(states).slice(1)) {
-      if (router.asPath.startsWith(path)) {
-        navStyle = states[path];
-        break;
-      }
-    }
-  }
+  const activePath = router.asPath;
 
   return (
     <Grid
@@ -101,35 +76,24 @@ const Nav = ({ isOpen, onOpen, onClose }: NavProps): JSX.Element => {
       </MenuContainer>
       {isOpen && (
         <Grid gridTemplateColumns="1fr" style={{ fontSize: '2rem' }} py="3rem">
-          <Links />
+          <Links activePath={activePath} />
         </Grid>
       )}
       <Container alignContent="center" display={['none', 'flex', 'flex']}>
         <Grid
           width="fit-content"
-          gridGap="2rem"
+          gridGap="0.5rem"
           alignItems="center"
           justifyItems="center"
-          gridTemplateColumns="repeat(5, auto)"
+          gridTemplateColumns="repeat(4, auto)"
           style={{
             borderRadius: '25px',
             background: 'rgba(0, 0, 0, 0.04)',
-            padding: '15px',
+            padding: '6px 10px',
             position: 'relative',
           }}
         >
-          <div
-            style={{
-              background: 'white',
-              position: 'absolute',
-              borderRadius: '25px',
-              height: '85%',
-              left: '6px',
-              width: '60px',
-              ...navStyle,
-            }}
-          />
-          <Links />
+          <Links activePath={activePath} />
         </Grid>
       </Container>
       <Container alignContent="flex-end" display={['none', 'none', 'flex']}>
