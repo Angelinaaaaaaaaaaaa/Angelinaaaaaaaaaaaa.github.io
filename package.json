@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
+    "generate-sitemap": "next-sitemap",
     "lint": "next lint",
     "start": "next start",
     "format": "prettier --write .",

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Container from './Container';
-import Grid from './Grid';
 import Link from './Link';
 import Text from './Text';
 import React from 'react';
@@ -23,6 +22,24 @@ const StyledFooter = styled.footer`
   align-items: center;
   bottom: 0;
   left: 0;
+`;
+
+// Create a specialized grid for footer navigation that won't be affected by other Grid modifications
+const NavGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+
+  & > a {
+    margin: 0 1rem;
+    @media (min-width: 768px) {
+      margin: 0 2rem;
+    }
+    @media (min-width: 1024px) {
+      margin: 0 3rem;
+    }
+  }
 `;
 
 const FooterGrid = styled.div`
@@ -64,12 +81,12 @@ const links = [
 const Footer = (): JSX.Element => (
   <StyledFooter>
     <Container paddingY="25px">
-      <Grid gridGap={['1rem', '2rem', '3rem']}>
+      <NavGrid>
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/projects">Projects</Link>
         <Link href="mailto:ruz039@ucsd.edu">Contact</Link>
-      </Grid>
+      </NavGrid>
     </Container>
     <FooterGrid>
       {links.map(({ url, icon: Icon }) => (

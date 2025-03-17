@@ -16,12 +16,15 @@ import {
   SpaceProps,
 } from 'styled-system';
 
+// Extend the GridProps to support both gridGap (deprecated) and gap (modern)
 export type GridProps = GridGapProps &
   SpaceProps &
   StyledGridProps &
   LayoutProps &
   FlexboxProps &
-  BordersProps;
+  BordersProps & {
+    gap?: string | string[] | number | number[]; // Add support for modern gap property
+  };
 
 const Grid = styled.div<GridProps>`
   display: grid;
@@ -32,7 +35,11 @@ const Grid = styled.div<GridProps>`
     ${({ children }) =>
       children &&
       css`repeat(${React.Children.toArray(children).length}, auto);`}
-    ${compose(gridGap, grid, space, layout, flexbox, borders)};
+  
+  /* Support both gridGap (legacy) and gap (modern) */
+  ${({ gap }) => gap && css`gap: ${gap};`}
+  
+  ${compose(gridGap, grid, space, layout, flexbox, borders)};
 `;
 
 Grid.defaultProps = {};

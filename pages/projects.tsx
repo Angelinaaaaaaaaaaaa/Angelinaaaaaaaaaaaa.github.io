@@ -56,7 +56,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       py="2rem"
       gridTemplateColumns={['1fr', 'repeat(2, 1fr)']}
       width="100%"
-      gridGap="2rem"
+      gap="2rem"
     >
       {projects.map(({ data }) => (
         <ProjectContainer
