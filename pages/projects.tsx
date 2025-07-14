@@ -107,7 +107,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://angelinaaaaaaaaaaaa.github.io/GA_Addressing_Voter_Turnout_Inequalies/">
-            DSC180 - Optimizing Voter Turnout - Ongoing
+            DSC180 - Addressing Voter Turnout Disparities through Data-Driven Resource Allocation
           </a>
         </Text>
         <Text>
