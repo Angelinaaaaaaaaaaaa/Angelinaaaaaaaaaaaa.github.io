@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { GetStaticProps } from 'next';
 
-import { Button, Container, Grid, Link, List, Text, Title } from '@components';
+import { Container, Grid, Link, List, Text, Title } from '@components';
 import { getPosts, Post } from '@posts';
 
 interface ProjectProps {
@@ -34,9 +34,9 @@ const ProjectTag = styled.li`
   letter-spacing: 0.03em;
 `;
 
-const ProjectButton = styled(Button)`
-  padding: 12px 30px;
-`;
+// const ProjectButton = styled(Button)`
+//   padding: 12px 30px;
+// `;
 
 const Projects = ({ projects }: ProjectProps): JSX.Element => (
   <Container marginBottom="5rem">
@@ -80,9 +80,9 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
                 {data.title}
               </Title>
             </Link>
-            <Link href={data.url} target="_blank">
-              <ProjectButton variant="secondary">View Project</ProjectButton>
-            </Link>
+            {/*<Link href={data.url} target="_blank">*/}
+            {/*  <ProjectButton variant="secondary">View Project</ProjectButton>*/}
+            {/*</Link>*/}
           </Container>
           <Container gridGap="1rem">
             <List marginY="1rem" margin={0}>
@@ -107,17 +107,17 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://angelinaaaaaaaaaaaa.github.io/GA_Addressing_Voter_Turnout_Inequalies/">
-            DSC180 - Addressing Voter Turnout Disparities through Data-Driven Resource Allocation
+            DSC180 - Optimizing Voter Turnout
           </a>
         </Text>
         <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/Replication-Active-learning-for-optimal-intervention-design-in-causal-models">
-            DSC180 - Active Learning - Ongoing
+            DSC180 - Active Learning
           </a>
         </Text>
         <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/Replication_reducing_inequality">
-            DSC180 - Targeted Interventions to Reduce Inequality - Ongoing
+            DSC180 - Targeted Interventions to Reduce Inequality
           </a>
         </Text>
       </Container>
@@ -150,7 +150,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://github.com/COGS108/Group162-FA24">
-            COGS108 - Predicting Confusion through EEG - Ongoing
+            COGS108 - Predicting Confusion through EEG
           </a>
         </Text>
       </Container>
