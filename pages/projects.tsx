@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { GetStaticProps } from 'next';
 
-import { Container, Grid, Link, List, Text, Title } from '@components';
+import { Container, Grid, Link, List, Text, Title, Button } from '@components';
 import { getPosts, Post } from '@posts';
 
 interface ProjectProps {
@@ -12,7 +12,7 @@ interface ProjectProps {
 
 const ProjectImage = styled.img`
   width: 100%;
-  height: 300px;
+  height: 480px;
   object-fit: cover;
   border-radius: 4px;
   transition: 0.2s ease-in-out 0s;
@@ -34,9 +34,9 @@ const ProjectTag = styled.li`
   letter-spacing: 0.03em;
 `;
 
-// const ProjectButton = styled(Button)`
-//   padding: 12px 30px;
-// `;
+const ProjectButton = styled(Button)`
+  padding: 12px 30px;
+`;
 
 const Projects = ({ projects }: ProjectProps): JSX.Element => (
   <Container marginBottom="5rem">
@@ -67,7 +67,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
           gridGap="1.5rem"
         >
           <Link href={data.url} width="100%" target="_blank">
-            <ProjectImage src={data.preview} />
+            <ProjectImage src={data.preview} height="auto" object-fit="contain"/>
           </Link>
           <Container
             flexDirection="row"
@@ -80,9 +80,9 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
                 {data.title}
               </Title>
             </Link>
-            {/*<Link href={data.url} target="_blank">*/}
-            {/*  <ProjectButton variant="secondary">View Project</ProjectButton>*/}
-            {/*</Link>*/}
+            <Link href={data.url} target="_blank">
+              <ProjectButton variant="secondary">View Project</ProjectButton>
+            </Link>
           </Container>
           <Container gridGap="1rem">
             <List marginY="1rem" margin={0}>
@@ -106,10 +106,12 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
-          <a href="https://angelinaaaaaaaaaaaa.github.io/GA_Addressing_Voter_Turnout_Inequalies/">
-            DSC180 - Optimizing Voter Turnout
+          <a href="https://github.com/Angelinaaaaaaaaaaaa/DL_for_Climate_Emulation_FinalVersion">
+            CSE151B - Climate Emulation with U-Net
           </a>
         </Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
         <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/Replication-Active-learning-for-optimal-intervention-design-in-causal-models">
             DSC180 - Active Learning
