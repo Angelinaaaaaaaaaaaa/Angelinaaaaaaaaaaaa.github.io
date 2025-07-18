@@ -50,15 +50,23 @@ const Home = (): JSX.Element => (
       {/* About Me Section */}
       <Container maxWidth="700px" gridGap="3rem" alignItems="center">
         <Text textAlign="left">
-          I am Angelina (Runjie) Zhang, and I also go by Angie/Angela/Angel 😉 I
-          am currently a third-year student at UC San Diego, double majoring in
-          Data Science and Math-Computer Science with a minor in Cognitive
-          Science. My research interests lie in trustworthy machine learning,
-          with a focus on systematically integrating fairness into algorithm
-          design and improving the interpretability of complex models. My goal
-          is to develop responsible methodologies that address key challenges in
-          data science, promoting equitable and transparent data-driven
-          decision-making.
+          {/*I am Angelina (Runjie) Zhang, and I also go by Angie/Angela/Angel 😉 I*/}
+          {/*am currently a third-year student at UC San Diego, double majoring in*/}
+          {/*Data Science and Math-Computer Science with a minor in Cognitive*/}
+          {/*Science. My research interests lie in trustworthy machine learning,*/}
+          {/*with a focus on systematically integrating fairness into algorithm*/}
+          {/*design and improving the interpretability of complex models. My goal*/}
+          {/*is to develop responsible methodologies that address key challenges in*/}
+          {/*data science, promoting equitable and transparent data-driven*/}
+          {/*decision-making.*/}
+          Hi, I’m Angelina (Runjie) Zhang — or just Angie/Angela/Angel 😉 I’m a
+          Data Science and Math–Computer Science double major at UC San Diego,
+          with a minor in Cognitive Science. This fall, I’ll be joining the MEng
+          program in Electrical Engineering and Computer Sciences at UC
+          Berkeley, focusing on data science. My passion lies in trustworthy
+          machine learning — especially designing fair algorithms and making
+          complex models more interpretable. I’m driven to develop responsible,
+          transparent, and equitable approaches to data-driven decision-making.
         </Text>
         <Link href="/about">
           <Button>More about me &rarr;</Button>
