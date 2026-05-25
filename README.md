@@ -1,48 +1,71 @@
-# [Runjie Zhang](https://Angelinaaaaaaaaaaaa.github.io)
+# Angelina (Runjie) Zhang — Personal Website
 
-Source code of my personal website & blog ✨
+[![Build](https://img.shields.io/github/actions/workflow/status/Angelinaaaaaaaaaaaa/Angelinaaaaaaaaaaaa.github.io/ci.yml?branch=main&label=build)](https://github.com/Angelinaaaaaaaaaaaa/Angelinaaaaaaaaaaaa.github.io/actions)
+[![Live](https://img.shields.io/badge/live-angelinaaaaaaaaaaaa.github.io-black)](https://Angelinaaaaaaaaaaaa.github.io/)
 
-Check the live version [here](https://Angelinaaaaaaaaaaaa.github.io/) ⚡️
+Personal portfolio and blog for Angelina (Runjie) Zhang — incoming Software Engineer at Uber, UC Berkeley MEng EECS student, and UC San Diego Data Science + Math-CS alumna.
 
-## ✨ Features
+**Live site →** [angelinaaaaaaaaaaaa.github.io](https://Angelinaaaaaaaaaaaa.github.io/)
 
-- Responsive
-- RSS Feed
-- Blog with Notion API
-- Strongly typed
-- Fast thanks to Next.js and Vercel
-- Components made with styled-components
-- GitHub CI to build and lint project
+---
 
-## 📦 Made with
+## Stack
 
-- next.js
-- typescript
-- styled-components
-- styled-system
-- react-notion-x
-- notion API
+| Layer | Technology |
+|---|---|
+| Framework | [Next.js](https://nextjs.org/) (static export) |
+| Language | TypeScript |
+| Styling | styled-components + styled-system |
+| Animations | Framer Motion |
+| Blog | Notion API via react-notion-x |
+| Deployment | GitHub Pages + GitHub Actions CI |
 
-## 💻 Getting Started
+## Features
 
-Install dependencies:
+- Responsive layout (mobile-first)
+- Hero section with animated CTA buttons
+- Projects page with image cards, tech tags, and links
+- About page with education, experience, and tech stack
+- Blog powered by Notion
+- RSS feed
+- Fast static builds via Next.js
+
+## Getting Started
 
 ```bash
+# Install dependencies
 npm install
 # or
 yarn
-```
 
-Then, run the development server:
-
-```bash
+# Run the dev server
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it locally.
 
-## 🗝 License
+```bash
+# Type-check
+npm run lint
 
-This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) file for details.
+# Production build
+npm run build
+```
+
+## Project Structure
+
+```
+.
+├── components/     # Reusable UI primitives (Button, Card, Nav, etc.)
+├── icons/          # SVG icon components
+├── pages/          # Next.js pages (index, about, projects, publications)
+├── posts/          # MDX project posts
+├── public/         # Static assets (images, favicon)
+└── styles/         # Global CSS and CSS Modules
+```
+
+## License
+
+[GPLv3](LICENSE) — see the license file for details.

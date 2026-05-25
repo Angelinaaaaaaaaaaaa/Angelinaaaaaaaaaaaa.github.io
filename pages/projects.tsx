@@ -109,6 +109,14 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
           <a href="https://github.com/Angelinaaaaaaaaaaaa/DL_for_Climate_Emulation_FinalVersion">
             CSE151B - Climate Emulation with U-Net
           </a>
+          {' '}— <span style={{ color: 'rgba(0,0,0,0.5)', fontSize: '0.9em' }}>🏆 Top project in class</span>
+        </Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://github.com/cs288-tai/tai_cs288">
+            CS288 - TAI-SlideQA: Multimodal Slide QA with VLM-Augmented Retrieval
+          </a>
         </Text>
       </Container>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
@@ -165,6 +173,13 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
         <Text>
           <a href="https://github.com/Angelinaaaaaaaaaaaa/Side-Analysis-of-League-Of-Legends-2023">
             DSC80 - Side Analysis of League Of Legends 2023
+          </a>
+        </Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text>
+          <a href="https://github.com/Angelinaaaaaaaaaaaa/ping-pong-game-290">
+            CSE290 - Ping Pong Game
           </a>
         </Text>
       </Container>

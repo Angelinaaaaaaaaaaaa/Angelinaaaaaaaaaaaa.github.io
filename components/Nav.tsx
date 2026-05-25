@@ -97,7 +97,7 @@ const Nav = ({ isOpen, onOpen, onClose }: NavProps): JSX.Element => {
         </Grid>
       </Container>
       <Container alignContent="flex-end" display={['none', 'none', 'flex']}>
-        <NavLink href="mailto:ruz039@ucsd.edu">Contact</NavLink>
+        <NavLink href="mailto:angelina_zhang@berkeley.edu">Contact</NavLink>
       </Container>
     </Grid>
   );

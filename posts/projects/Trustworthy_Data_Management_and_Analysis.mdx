@@ -1,12 +1,10 @@
 ---
-title: Fast Data Discovery
-url: #
+title: Matryoshka — Scalable Dataset Discovery & Feature Selection
+url: https://db.ucsd.edu/
 order: 4
 position: Research Assistant
 during: 07/2024-Present
-captions: ['➤ Designed and implemented incremental matrix factorization algorithms to support pre-join aggregate computation in large-scale relational databases.','➤ Applied QR, LU, and Cholesky decompositions to accelerate feature selection and reduce computational cost during data lake exploration.','➤ Built a conditional independence testing (CIT) pipeline for statistical feature augmentation to improve downstream ML model performance.','➤ onducted performance benchmarking (runtime, memory, precision) across matrix operations; optimized join strategies via offline simulation framework.']
+captions: ['➤ Co-designed Matryoshka, an ML-centric dataset discovery and feature selection system enabling scalable experimentation over 100M+ row relational data lakes without materializing full joins, using Python, PostgreSQL, and DuckDB.','➤ Implemented a two-phase optimizer combining table ranking with multicollinearity-aware feature pruning via proxy ML models, accelerating feature computation by 10× on datasets exceeding 100M rows through cached aggregate reuse and incremental covariance updates.','➤ Built automated benchmarking pipelines using Docker, Pandas, and NumPy to evaluate join strategies and discovery plans across diverse data lakes, demonstrating superior scalability and downstream ML accuracy.','➤ Designed custom inverted indexes and pre-computed Gram matrix sketches for scalable analytics, avoiding full materialization of joins and incrementally updating covariance statistics.']
 preview: /img/advancing_data_integrity.webp
-tags: [Python, Jupyter, C, Optimization, Data Visualization]
+tags: [Python, DuckDB, PostgreSQL, Docker, Pandas, NumPy, ML, Feature Selection]
 ---
-
-

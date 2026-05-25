@@ -1,115 +1,329 @@
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
+import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { MdMail } from 'react-icons/md';
 
-import { Button, Container, Grid, Link, Text, Title } from '@components';
+import { Container } from '@components';
 import styles from '@styles/Home.module.css';
+
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+`;
+
+const HeroSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  min-height: 80vh;
+  padding: 2rem 0 4rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+    min-height: auto;
+    padding: 2rem 0;
+    text-align: center;
+  }
+`;
+
+const HeroText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 520px;
+  animation: ${fadeUp} 0.7s ease both;
+`;
+
+const HeroName = styled.h1`
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+`;
+
+const HeroTagline = styled.p`
+  font-size: 1.15rem;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.65;
+  margin: 0;
+`;
+
+const Highlight = styled.span`
+  background: linear-gradient(120deg, #a855f7 0%, #6366f1 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+`;
+
+const BadgeRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
+const Badge = styled.span`
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.02em;
+`;
+
+const CTARow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
+const CTAButton = styled.a<{ primary?: boolean }>`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+
+  ${({ primary }) =>
+    primary
+      ? `
+    background: #0e0e0e;
+    color: white;
+    border-bottom: none;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+      background: #222;
+    }
+  `
+      : `
+    background: rgba(0,0,0,0.05);
+    color: #0e0e0e;
+    border-bottom: none;
+    &:hover {
+      transform: translateY(-2px);
+      background: rgba(0,0,0,0.09);
+    }
+  `}
+`;
+
+const PhotoWrapper = styled.div`
+  flex-shrink: 0;
+  animation: ${fadeUp} 0.7s 0.15s ease both;
+  opacity: 0;
+  animation-fill-mode: forwards;
+`;
+
+const Divider = styled.hr`
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 0;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+`;
+
+const InterestGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+`;
+
+const InterestCard = styled.div`
+  background: rgba(0, 0, 0, 0.025);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+`;
+
+const InterestLabel = styled.p`
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+`;
+
+const InterestSub = styled.p`
+  font-size: 0.82rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0;
+`;
+
+const ContactSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 0 2rem;
+  gap: 1.5rem;
+`;
+
+const ContactTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.02em;
+`;
+
+const ContactSubtitle = styled.p`
+  font-size: 1.05rem;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 460px;
+  line-height: 1.6;
+  margin: 0;
+`;
+
+const interests = [
+  { label: 'Trustworthy AI', sub: 'Fairness, interpretability, alignment' },
+  { label: 'Data Systems', sub: 'Scalable pipelines, backend infra' },
+  { label: 'Machine Learning', sub: 'Applied ML, research methods' },
+  { label: 'Full-Stack Engineering', sub: 'End-to-end product development' },
+];
 
 const Home = (): JSX.Element => (
   <Container>
-    {/* Container for the top section with centered content */}
-    <Container
-      justifyContent="center"
-      alignContent="center"
-      alignItems="center"
-      textAlign="center"
-    >
-      {/* Use Grid to split into two columns */}
-      <Grid
-        gridTemplateColumns={['1fr', '1fr 1fr']} // 2 columns on larger screens
-        justifyItems="center"
-        alignItems="center"
-        style={{ height: '60vh' }} // Ensures full height for centering
-      >
-        {/* First column: Image */}
-        <Container
-          alignItems="center"
-          justifyContent="center"
-          style={{ padding: '0' }} // Remove any padding around the image container
-        >
-          <Image
-            src="/me.webp"
-            alt="Runjie Zhang"
-            width={240}
-            height={320}
-            style={{ objectFit: 'cover', padding: '0' }} // Remove extra space around the image
-            className={styles.image}
-          />
-        </Container>
+    <Head>
+      <title>Runjie Zhang — Software Engineer & ML Researcher</title>
+      <meta
+        name="description"
+        content="Runjie (Angelina) Zhang — incoming Uber SWE, UC Berkeley MEng EECS student. I build data-driven systems at the intersection of backend engineering and trustworthy ML."
+      />
+    </Head>
 
-        {/* Second column: Text Content */}
-        <Container
-          alignItems="center"
-          justifyContent="center"
-          textAlign="center"
-        >
-          <Title>Runjie Zhang</Title>
-        </Container>
-      </Grid>
+    <HeroSection>
+      <HeroText>
+        <HeroName>
+          Hi, I&apos;m Angelina 👋
+        </HeroName>
 
-      {/* About Me Section */}
-      <Container maxWidth="700px" gridGap="3rem" alignItems="center">
-        <Text textAlign="left">
-          {/*I am Angelina (Runjie) Zhang, and I also go by Angie/Angela/Angel 😉 I*/}
-          {/*am currently a third-year student at UC San Diego, double majoring in*/}
-          {/*Data Science and Math-Computer Science with a minor in Cognitive*/}
-          {/*Science. My research interests lie in trustworthy machine learning,*/}
-          {/*with a focus on systematically integrating fairness into algorithm*/}
-          {/*design and improving the interpretability of complex models. My goal*/}
-          {/*is to develop responsible methodologies that address key challenges in*/}
-          {/*data science, promoting equitable and transparent data-driven*/}
-          {/*decision-making.*/}
-          Hi, I’m Angelina (Runjie) Zhang — or just Angie/Angela/Angel 😉 I’m a
-          Data Science and Math–Computer Science double major at UC San Diego,
-          with a minor in Cognitive Science. This fall, I’ll be joining the MEng
-          program in Electrical Engineering and Computer Sciences at UC
-          Berkeley, focusing on data science. My passion lies in trustworthy
-          machine learning — especially designing fair algorithms and making
-          complex models more interpretable. I’m driven to develop responsible,
-          transparent, and equitable approaches to data-driven decision-making.
-        </Text>
-        <Link href="/about">
-          <Button>More about me &rarr;</Button>
-        </Link>
-      </Container>
-    </Container>
+        <BadgeRow>
+          <Badge>Uber · Incoming SWE</Badge>
+          <Badge>UC Berkeley MEng EECS &rsquo;26</Badge>
+          <Badge>UC San Diego &rsquo;25</Badge>
+        </BadgeRow>
 
-    {/* Get in Touch Section */}
-    <Container alignItems="center" paddingY="4rem">
-      <Container maxWidth="600px" alignItems="center" textAlign="center">
-        <Title fontSize="3rem" as="h3">
-          Get in touch
-        </Title>
-        <Text>
-          Although I&apos;m not actively looking for job opportunities, my inbox
-          is still open for you. Feel free to ask me anything!
-        </Text>
-        <Grid
-          gridGap="2rem"
-          marginTop="2rem"
-          gridTemplateColumns="1fr"
-          justifyItems="center" // Centering horizontally
-          alignItems="center" // Centering vertically
-        >
-          <Link href="mailto:ruz039@ucsd.edu">
-            <Button width="auto">
-              <motion.span
-                initial={{ display: 'inline-block' }}
-                animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: 'reverse',
-                  duration: 2.5,
-                }}
-              >
-                👋
-              </motion.span>{' '}
-              Say hello
-            </Button>
-          </Link>
-        </Grid>
-      </Container>
-    </Container>
+        <HeroTagline>
+          I build <Highlight>data-driven systems</Highlight> at the intersection
+          of backend engineering, machine learning, and trustworthy AI. I care
+          about making models fairer, pipelines faster, and software that
+          actually ships.
+        </HeroTagline>
+
+        <CTARow>
+          <CTAButton
+            primary
+            href="mailto:angelina_zhang@berkeley.edu"
+          >
+            <motion.span
+              initial={{ display: 'inline-block' }}
+              animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
+              transition={{ repeat: Infinity, repeatType: 'reverse', duration: 2.5 }}
+            >
+              👋
+            </motion.span>
+            Say hello
+          </CTAButton>
+          <CTAButton href="https://github.com/Angelinaaaaaaaaaaaa" target="_blank" rel="noopener noreferrer">
+            <SiGithub size={16} />
+            GitHub
+          </CTAButton>
+          <CTAButton href="https://www.linkedin.com/in/angelina-zhang-28a95827a/" target="_blank" rel="noopener noreferrer">
+            <SiLinkedin size={16} />
+            LinkedIn
+          </CTAButton>
+          <CTAButton href="/about">
+            About me
+          </CTAButton>
+        </CTARow>
+      </HeroText>
+
+      <PhotoWrapper>
+        <Image
+          src="/me.webp"
+          alt="Runjie (Angelina) Zhang"
+          width={220}
+          height={293}
+          style={{ objectFit: 'cover' }}
+          className={styles.image}
+          priority
+        />
+      </PhotoWrapper>
+    </HeroSection>
+
+    <Divider />
+
+    <section style={{ padding: '3.5rem 0' }}>
+      <SectionTitle>What I care about</SectionTitle>
+      <HeroTagline style={{ marginTop: '0.25rem' }}>
+        My work sits at the intersection of systems, data, and responsible ML.
+      </HeroTagline>
+      <InterestGrid>
+        {interests.map(({ label, sub }) => (
+          <InterestCard key={label}>
+            <InterestLabel>{label}</InterestLabel>
+            <InterestSub>{sub}</InterestSub>
+          </InterestCard>
+        ))}
+      </InterestGrid>
+    </section>
+
+    <Divider />
+
+    <ContactSection>
+      <ContactTitle>Get in touch</ContactTitle>
+      <ContactSubtitle>
+        I&apos;m always happy to connect — whether it&apos;s about research,
+        engineering, or just a good conversation.
+      </ContactSubtitle>
+      <CTARow style={{ justifyContent: 'center' }}>
+        <CTAButton primary href="mailto:angelina_zhang@berkeley.edu">
+          <MdMail size={17} />
+          angelina_zhang@berkeley.edu
+        </CTAButton>
+        <CTAButton href="https://www.linkedin.com/in/angelina-zhang-28a95827a/" target="_blank" rel="noopener noreferrer">
+          <SiLinkedin size={16} />
+          LinkedIn
+        </CTAButton>
+        <CTAButton href="https://github.com/Angelinaaaaaaaaaaaa" target="_blank" rel="noopener noreferrer">
+          <SiGithub size={16} />
+          GitHub
+        </CTAButton>
+      </CTARow>
+    </ContactSection>
   </Container>
 );
 

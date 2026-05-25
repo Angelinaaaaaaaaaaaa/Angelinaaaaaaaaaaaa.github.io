@@ -43,32 +43,39 @@ const About = (): JSX.Element => (
         Education
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="1rem">
-        <Text>
-          University of California San Diego (UCSD), Bachelor of Science,
-          09/2022-Present
-        </Text>
-        <Text>Major: Data Science, Math-Computer Science</Text>
-        <Text>Minor: Cognitive Science</Text>
+        <Text fontWeight="700">University of California, Berkeley</Text>
+        <Text>Master of Engineering, Electrical Engineering &amp; Computer Sciences (EECS), 09/2025–05/2026</Text>
+        <Text>Focus: Data Science &amp; Machine Learning Systems</Text>
+      </Container>
+      <Container maxWidth={['100%', '720px']} marginY="1rem">
+        <Text fontWeight="700">University of California San Diego</Text>
+        <Text>Bachelor of Science, 09/2022–05/2025 — Graduated in 3 years</Text>
+        <Text>Double Major: Data Science, Mathematics–Computer Science · Minor: Cognitive Science</Text>
+        <Text>Major GPA: 3.94/4.0 · Provost Honors</Text>
       </Container>
       <Container alignContent="left" alignItems="left">
         <Title fontSize="40px" as="h2">
           Experience
         </Title>
         <Container maxWidth={['100%', '720px']} marginY="1rem">
-          <Text>
-            <a href="https://www.tritonfunds.com/team">
-              Triton Funds, California, United States
-            </a>
+          <Text fontWeight="700">
+            <a href="https://www.uber.com/">Uber</a>
           </Text>
-          <Text>Developer, 06/2023-09/2023</Text>
+          <Text>Software Engineer (incoming), 2026</Text>
         </Container>
         <Container maxWidth={['100%', '720px']} marginY="1rem">
-          <Text>
-            <a href="https://ventureshares.io/">
-              Venture Shares, California, United States
-            </a>
+          <Text fontWeight="700">
+            <a href="https://ventureshares.io/">Venture Shares</a>
           </Text>
-          <Text>Data Recollection Intern, 06/2024-10/2024</Text>
+          <Text>Software Engineer Intern, 06/2024–10/2024</Text>
+          <Text>Built streaming data pipelines (Kafka, FastAPI, asyncio) processing 1M+ financial records/day; developed RESTful APIs reducing response latency by 60%; engineered MongoDB feature store restoring sub-second query performance on millions of records.</Text>
+        </Container>
+        <Container maxWidth={['100%', '720px']} marginY="1rem">
+          <Text fontWeight="700">
+            <a href="https://www.tritonfunds.com/team">Triton Funds</a>
+          </Text>
+          <Text>Software Developer Intern, 06/2023–09/2023</Text>
+          <Text>Developed Python ETL pipeline processing 500+ SEC filings per batch; integrated GPT-based NLP achieving 99% entity extraction accuracy; built Flask + AWS (EC2, RDS) REST API serving 50+ QPS with p95 latency &lt;200ms.</Text>
         </Container>
       </Container>
 

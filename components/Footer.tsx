@@ -61,7 +61,7 @@ const links = [
     icon: SiTwitter,
   },
   {
-    url: 'mailto:ruz039@ucsd.edu',
+    url: 'mailto:angelina_zhang@berkeley.edu',
     icon: MdMail,
   },
   {
@@ -85,7 +85,7 @@ const Footer = (): JSX.Element => (
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/projects">Projects</Link>
-        <Link href="mailto:ruz039@ucsd.edu">Contact</Link>
+        <Link href="mailto:angelina_zhang@berkeley.edu">Contact</Link>
       </NavGrid>
     </Container>
     <FooterGrid>
