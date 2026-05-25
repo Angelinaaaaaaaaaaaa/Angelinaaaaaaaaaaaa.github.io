@@ -59,14 +59,14 @@ const ContentSection = styled(Container)`
 const Publications = (): JSX.Element => (
   <Container marginBottom="5rem">
     <Head>
-      <title>Publications</title>
+      <title>Publications — Runjie Zhang</title>
     </Head>
     <Container alignItems="center" mb="4rem">
       <Title fontSize={['32px', '40px']} as="h1" mb="1rem">
         Publications
       </Title>
       <Text textAlign="center" maxWidth="700px" color="rgba(0, 0, 0, 0.7)">
-        Research work and academic contributions in the field of computer graphics and neural rendering.
+        Research work and academic contributions spanning machine learning systems, trustworthy AI, data engineering, and computer graphics.
       </Text>
     </Container>
     
@@ -131,6 +131,7 @@ const Publications = (): JSX.Element => (
             <Link
               href="https://onlinelibrary.wiley.com/doi/10.1002/cav.2240"
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: 'inline-block',
                 padding: '0.7rem 1.2rem',
@@ -140,7 +141,24 @@ const Publications = (): JSX.Element => (
                 transition: 'all 0.2s ease'
               }}
             >
-              View on Wiley
+              Read paper →
+            </Link>
+            <Link
+              href="https://english.cas.cn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+                padding: '0.7rem 1.2rem',
+                background: 'transparent',
+                border: '1px solid rgba(0,0,0,0.1)',
+                borderRadius: '8px',
+                fontWeight: '500',
+                color: 'rgba(0,0,0,0.55)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              Chinese Academy of Sciences ↗
             </Link>
           </Grid>
         </Container>

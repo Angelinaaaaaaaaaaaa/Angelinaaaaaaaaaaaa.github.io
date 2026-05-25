@@ -26,39 +26,37 @@ const Layout: React.FC<LayoutProps> = ({
         <meta charSet="utf-8" />
         <meta name="author" content="Runjie Zhang" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Runjie Zhang" />
+        <meta property="og:title" content="Runjie Zhang — Software Engineer & ML Researcher" />
         <meta
           property="og:description"
-          content="I'm a Full Stack developer with experience in DevOps, Backend, Frontend and mobile development."
+          content="Runjie (Angelina) Zhang — incoming Uber SWE, UC Berkeley MEng EECS. I build data-driven systems at the intersection of backend engineering and trustworthy ML."
         />
         <meta property="og:type" content="website" />
-        <meta property="twitter:site" content="@_shellbear" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:image"
-          content="https://shellbear.me/img/preview.webp"
+          content="https://angelinaaaaaaaaaaaa.github.io/me.webp"
         />
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <Script
-              async
-              src="https://www.googletagmanager.com/gtag/js?id=G-RZP6RWZ32F"
-            />
-            <Script
-              id="gtm-script"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-      
-                  gtag('config', 'G-RZP6RWZ32F');`,
-              }}
-            />
-          </>
-        )}
       </Head>
+      {process.env.NODE_ENV === 'production' && (
+        <>
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-RZP6RWZ32F"
+          />
+          <Script
+            id="gtm-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-RZP6RWZ32F');`,
+            }}
+          />
+        </>
+      )}
       <Nav
         isOpen={isOpen}
         onOpen={() => setIsOpen(true)}

@@ -28,8 +28,12 @@ const getPosts = async (dir: string): Promise<Post[]> => {
       data.slug = slug;
 
       if (data.image) {
-        const { base64 } = await getPlaiceholder(data.image);
-        data.blurImage = base64;
+        try {
+          const { base64 } = await getPlaiceholder(data.image);
+          data.blurImage = base64;
+        } catch (err) {
+          console.error(`[plaiceholder] Failed to process image: ${data.image}`, err);
+        }
       }
 
       const source = await serialize(content, {

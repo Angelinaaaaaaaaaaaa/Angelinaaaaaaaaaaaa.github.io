@@ -40,14 +40,14 @@ const About: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         mb="2rem"
       >
         <Text>📅 {experience.data.date}</Text>
-        <a href={experience.data.link}>🔗 Website</a>
+        {experience.data.link && <a href={experience.data.link} target="_blank" rel="noopener noreferrer">🔗 Website</a>}
       </Container>
       <Container position="relative" width="100%" height="300px">
         <Image
           src={experience.data.image}
           alt={experience.data.title}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           placeholder="blur"
           blurDataURL={experience.data.blurImage}
         />

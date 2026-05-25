@@ -29,6 +29,16 @@ const MenuContainer = styled(Container)`
   cursor: pointer;
 `;
 
+const IconButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: inherit;
+`;
+
 export interface NavProps {
   isOpen: boolean;
   onOpen: () => void;
@@ -62,16 +72,13 @@ const Nav = ({ isOpen, onOpen, onClose }: NavProps): JSX.Element => {
       </Container>
       <MenuContainer display={['flex', 'none', 'none']}>
         {isOpen ? (
-          <Close
-            size="2rem"
-            style={{ margin: '-0.3rem' }}
-            onClick={(evt) => evt.type === 'click' && onClose()}
-          />
+          <IconButton onClick={onClose} aria-label="Close navigation menu">
+            <Close size="2rem" style={{ margin: '-0.3rem' }} aria-hidden="true" />
+          </IconButton>
         ) : (
-          <Menu
-            size="1.6rem"
-            onClick={(evt) => evt.type === 'click' && onOpen()}
-          />
+          <IconButton onClick={onOpen} aria-label="Open navigation menu">
+            <Menu size="1.6rem" aria-hidden="true" />
+          </IconButton>
         )}
       </MenuContainer>
       {isOpen && (
