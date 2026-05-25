@@ -191,7 +191,10 @@ const CourseItem = styled.div`
   }
 `;
 
-const CourseLink = styled.a`
+const CourseLink = styled.a.attrs(() => ({
+  target: '_blank',
+  rel: 'noopener noreferrer',
+}))`
   font-size: 0.95rem;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.8);
@@ -260,13 +263,13 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
             <ProjectTitle>{data.title}</ProjectTitle>
 
             <CaptionList>
-              {data.captions.map((caption: string, i: number) => (
-                <CaptionItem key={i}>{caption}</CaptionItem>
+              {(data.captions ?? []).map((caption: string) => (
+                <CaptionItem key={caption}>{caption}</CaptionItem>
               ))}
             </CaptionList>
 
             <TagRow>
-              {data.tags.map((tag: string) => (
+              {(data.tags ?? []).map((tag: string) => (
                 <Tag key={tag}>{tag}</Tag>
               ))}
             </TagRow>

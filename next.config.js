@@ -5,7 +5,9 @@
  **/
 module.exports = {
   images: {
-    domains: ['rdl.ink'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'rdl.ink' },
+    ],
   },
   webpack: (config, { dev, isServer }) => {
     if (!isServer) {
@@ -16,7 +18,7 @@ module.exports = {
     config.resolve.modules = ['node_modules', ...config.resolve.modules];
     
     config.module.rules.push({
-      test: /\.md|\.mdx|\.webp$/,
+      test: /\.(md|mdx|webp)$/,
       use: 'raw-loader',
     });
 
@@ -51,17 +53,10 @@ module.exports = {
 
     return config;
   },
-  // Development optimization
   reactStrictMode: true,
-  swcMinify: true,
   compiler: {
     styledComponents: true,
     removeConsole: process.env.NODE_ENV === 'production',
-  },
-  // Improve page loading
-  onDemandEntries: {
-    maxInactiveAge: 60 * 1000, // 1 minute
-    pagesBufferLength: 5,
   },
   experimental: {
     forceSwcTransforms: true,

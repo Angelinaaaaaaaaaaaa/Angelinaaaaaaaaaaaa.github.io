@@ -90,7 +90,7 @@ const Footer = (): JSX.Element => (
     </Container>
     <FooterGrid>
       {links.map(({ url, icon: Icon }) => (
-        <Link key={url} target="_blank" opacity={0.7} href={url}>
+        <Link key={url} target="_blank" rel="noopener noreferrer" opacity={0.7} href={url}>
           <Icon size={22} />
         </Link>
       ))}

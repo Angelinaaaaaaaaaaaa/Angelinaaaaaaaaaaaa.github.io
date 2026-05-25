@@ -7,6 +7,8 @@ import Script from 'next/script';
 
 import styles from '@styles/Home.module.css';
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
 type LayoutProps = {
   children?: React.ReactNode;
   title?: string;
@@ -38,11 +40,11 @@ const Layout: React.FC<LayoutProps> = ({
           content="https://angelinaaaaaaaaaaaa.github.io/me.webp"
         />
       </Head>
-      {process.env.NODE_ENV === 'production' && (
+      {process.env.NODE_ENV === 'production' && GA_ID && (
         <>
           <Script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-RZP6RWZ32F"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           />
           <Script
             id="gtm-script"
@@ -52,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-RZP6RWZ32F');`,
+                gtag('config', '${GA_ID}');`,
             }}
           />
         </>

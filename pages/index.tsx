@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styled, { keyframes } from 'styled-components';
@@ -107,6 +107,11 @@ const CTAButton = styled.a<{ primary?: boolean }>`
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 
+  &:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
+
   ${({ primary }) =>
     primary
       ? `
@@ -207,16 +212,32 @@ const MapLabel = styled.p`
   margin: 0;
 `;
 
-const MapWidget = styled.div`
-  width: 440px;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  line-height: 0;
+const MapHint = styled.p`
+  font-size: 0.72rem;
+  color: rgba(0, 0, 0, 0.35);
+  margin: 0;
+  letter-spacing: 0.01em;
+`;
 
-  & > * {
-    display: block !important;
-    max-width: 100% !important;
+const MapImage = styled.a`
+  display: block;
+  width: 360px;
+  max-width: 100%;
+  line-height: 0;
+  border-bottom: none;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover img {
+    opacity: 0.88;
   }
 `;
 
@@ -246,22 +267,7 @@ const ContactSubtitle = styled.p`
 `;
 
 
-const Home = (): JSX.Element => {
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = mapRef.current;
-    if (!container || container.childElementCount > 0) return;
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = '//clustrmaps.com/map_v2.js?d=izwGsFn4FSSA31w3pRZFwbJPOdlHjaNPILZsaEGV0fk&cl=ffffff&w=440';
-    container.appendChild(script);
-    return () => {
-      if (container.contains(script)) container.removeChild(script);
-    };
-  }, []);
-
-  return (
+const Home = (): JSX.Element => (
   <Container>
     <Head>
       <title>Runjie Zhang — Software Engineer & ML Researcher</title>
@@ -370,18 +376,22 @@ const Home = (): JSX.Element => {
 
     <VisitorMapSection>
       <MapLabel>Visitors around the world</MapLabel>
-      <MapWidget ref={mapRef} />
-      <a
+      <MapImage
         href="https://clustrmaps.com/site/1ca3v"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ fontSize: '0.72rem', color: 'rgba(0,0,0,0.35)', textDecoration: 'none', borderBottom: 'none' }}
+        title="Click to view full visitor stats on ClustrMaps"
       >
-        View full stats ↗
-      </a>
+        <img
+          src="https://clustrmaps.com/map_v2.png?d=izwGsFn4FSSA31w3pRZFwbJPOdlHjaNPILZsaEGV0fk&cl=ffffff&co=2d78ad"
+          alt="World map showing visitor locations — click to view full stats"
+        />
+      </MapImage>
+      <MapHint>
+        Click the map to see visitor locations &amp; counts ↗
+      </MapHint>
     </VisitorMapSection>
   </Container>
-  );
-};
+);
 
 export default Home;

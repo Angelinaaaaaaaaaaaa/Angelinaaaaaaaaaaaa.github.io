@@ -10,7 +10,6 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  margin: 0.5rem 0;
   font-size: medium;
   margin: 0.75rem 0;
   color: rgba(0, 0, 0, 0.7);

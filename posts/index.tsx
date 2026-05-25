@@ -23,18 +23,23 @@ const getPosts = async (dir: string): Promise<Post[]> => {
       const basename = path.basename(file);
       const slug = basename.replace('.mdx', '');
       const raw = fs.readFileSync(file, 'utf8');
-      const { data, content } = matter(raw);
+      const { data: rawData, content } = matter(raw);
 
-      data.slug = slug;
-
-      if (data.image) {
+      let blurImage: string | undefined;
+      if (rawData.image) {
         try {
-          const { base64 } = await getPlaiceholder(data.image);
-          data.blurImage = base64;
+          const { base64 } = await getPlaiceholder(rawData.image);
+          blurImage = base64;
         } catch (err) {
-          console.error(`[plaiceholder] Failed to process image: ${data.image}`, err);
+          console.error(`[plaiceholder] Failed to process image: ${rawData.image}`, err);
         }
       }
+
+      const data = {
+        ...rawData,
+        slug,
+        ...(blurImage ? { blurImage } : {}),
+      };
 
       const source = await serialize(content, {
         scope: data,
