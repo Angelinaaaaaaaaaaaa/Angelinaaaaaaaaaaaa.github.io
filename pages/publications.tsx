@@ -79,7 +79,7 @@ const Publications = (): JSX.Element => (
         
         {/* Authors right below the title */}
         <Text textAlign="center" fontSize="1.1rem" color="rgba(0, 0, 0, 0.7)" mb="1rem">
-          <strong>Jianing Hou</strong>, <strong>Runjie Zhang</strong>, Zhongqi Wu, Weiliang Meng, Xiaopeng Zhang, Jianwei Guo*
+          Jianing Hou, <strong>Runjie Zhang</strong>, Zhongqi Wu, Weiliang Meng, Xiaopeng Zhang, Jianwei Guo*
         </Text>
       </Container>
       

@@ -309,6 +309,21 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
           CS288 — TAI-SlideQA: Multimodal Slide QA with VLM-Augmented Retrieval
         </CourseLink>
       </CourseItem>
+      <CourseItem>
+        <CourseLink href="https://github.com/Angelinaaaaaaaaaaaa/lecture_finder">
+          CS282 — Lecture Finder
+        </CourseLink>
+      </CourseItem>
+      <CourseItem>
+        <CourseLink href="https://github.com/Angelinaaaaaaaaaaaa/in-context-transformer-ar">
+          CS282 — In-Context Transformer (Autoregressive)
+        </CourseLink>
+      </CourseItem>
+      <CourseItem>
+        <CourseLink href="https://github.com/Angelinaaaaaaaaaaaa/Conv-Layer-Intuition-Tutor">
+          CS282 — Conv Layer Intuition Tutor
+        </CourseLink>
+      </CourseItem>
 
       {/* UC San Diego */}
       <CourseGroupLabel>UC San Diego</CourseGroupLabel>

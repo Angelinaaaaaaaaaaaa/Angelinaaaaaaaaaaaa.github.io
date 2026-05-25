@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Script from 'next/script';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
@@ -194,8 +193,9 @@ const VisitorMapSection = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2.5rem 0 2rem;
+  padding: 2.5rem 0 0;
   gap: 0.75rem;
+  margin-bottom: 5rem;
 `;
 
 const MapLabel = styled.p`
@@ -207,21 +207,19 @@ const MapLabel = styled.p`
   margin: 0;
 `;
 
-const MapContainer = styled.div`
-  width: 100%;
-  max-width: 440px;
-  height: 220px;
+const MapWidget = styled.div`
+  width: 440px;
+  max-width: 100%;
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  position: relative;
+  border-radius: 10px;
+  line-height: 0;
 
-  /* clip the clustrmaps widget which renders at full viewport width */
-  & > div,
-  & script ~ * {
+  & > * {
+    display: block !important;
     max-width: 100% !important;
   }
 `;
+
 
 const ContactSection = styled.section`
   display: flex;
@@ -248,7 +246,22 @@ const ContactSubtitle = styled.p`
 `;
 
 
-const Home = (): JSX.Element => (
+const Home = (): JSX.Element => {
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = mapRef.current;
+    if (!container || container.childElementCount > 0) return;
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = '//clustrmaps.com/map_v2.js?d=izwGsFn4FSSA31w3pRZFwbJPOdlHjaNPILZsaEGV0fk&cl=ffffff&w=440';
+    container.appendChild(script);
+    return () => {
+      if (container.contains(script)) container.removeChild(script);
+    };
+  }, []);
+
+  return (
   <Container>
     <Head>
       <title>Runjie Zhang — Software Engineer & ML Researcher</title>
@@ -357,14 +370,7 @@ const Home = (): JSX.Element => (
 
     <VisitorMapSection>
       <MapLabel>Visitors around the world</MapLabel>
-      <MapContainer>
-        <Script
-          id="clustrmaps"
-          type="text/javascript"
-          strategy="afterInteractive"
-          src="https://cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=440&t=tt&d=izwGsFn4FSSA31w3pRZFwbJPOdlHjaNPILZsaEGV0fk&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353"
-        />
-      </MapContainer>
+      <MapWidget ref={mapRef} />
       <a
         href="https://clustrmaps.com/site/1ca3v"
         target="_blank"
@@ -375,6 +381,7 @@ const Home = (): JSX.Element => (
       </a>
     </VisitorMapSection>
   </Container>
-);
+  );
+};
 
 export default Home;
